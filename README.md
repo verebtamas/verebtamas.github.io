@@ -1,2 +1,1 @@
-# verebtamas.github.io
-🌱 My own portfolio website
+# 🌱 My own portfolio website
