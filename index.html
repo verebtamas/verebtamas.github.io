@@ -40,7 +40,7 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <a href="#"">
+          <a href="#">
           <img src="./assets/images/my-avatar.png" alt="Veréb Tamás" width="160">
           </a>
         </figure>
@@ -1323,9 +1323,12 @@ Az operátorok és más technikusok képzése az automatizált rendszerek haszn�
 
 
 
-  <footer>
-    <p>© 2024 developed by vereb.tamas</p>
-  </footer>
+<footer>
+  <p>© <span id="year"></span> developed by Veréb Tamás</p>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</footer>
 
 </body>
 
