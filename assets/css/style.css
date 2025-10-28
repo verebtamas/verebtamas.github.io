@@ -724,7 +724,17 @@ main {
   transition: var(--transition-1);
 }
 
-.clients-item img:hover { filter: grayscale(0); }
+.clients-item img:hover { 
+  filter: grayscale(0);
+  animation: zoom 2s ease-in-out infinite alternate;
+}
+
+@keyframes zoom {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
 
 /*-----------------------------------*\
   #RESUME
@@ -1103,6 +1113,11 @@ main {
   margin-bottom: 25px;
 }
 
+/* Add this new style for the subject input */
+.form-input[name="subject"] {
+  margin-bottom: 30px;
+}
+
 .form-input {
   color: var(--white-2);
   font-size: var(--fs-6);
@@ -1272,9 +1287,17 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .sidebar-info { gap: 25px; }
 
-  .avatar-box { border-radius: 30px; }
+  .avatar-box { border-radius: 60px;
+  position: relative;
+  overflow: hidden;     
+  border-radius: 60px;  
+  width: 150px;         
+  height: 151px; }
 
-  .avatar-box img { width: 120px; }
+  .avatar-box img { width: 120px; height: 100%;
+  object-fit: cover;    
+  border-radius: inherit;
+  display: block;}
 
   .info-content .name { margin-bottom: 15px; }
 
@@ -1428,6 +1451,28 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .skills-item:not(:last-child) { margin-bottom: 25px; }
+
+.active-status {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: #1499ff;
+  animation: 1.5s pulse infinite ease-in-out;
+  position: absolute;
+  bottom: 111px;
+  right: 35px;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #81c8ff;
+  }
+
+  100% {
+    box-shadow: 0 0 0 14px #69ffa800;
+  }
+}
+
 
   /**
    * #PORTFOLIO, BLOG
@@ -1762,6 +1807,10 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .timeline-text { max-width: 700px; }
 
+}
+
+.duration {
+  display: inline;
 }
 
 /*test*/
