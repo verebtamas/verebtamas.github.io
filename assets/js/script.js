@@ -196,3 +196,58 @@ document.addEventListener('keydown', function(event) {
       event.preventDefault();
   }
 });
+
+
+// experience-calculator.js
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  function calculateDuration(startDate, endDate) {
+    const start = new Date(startDate);
+    const end = endDate === 'present' ? new Date() : new Date(endDate);
+
+    let startYear = start.getFullYear();
+    let startMonth = start.getMonth(); // 0-indexed (Jan = 0)
+    let endYear = end.getFullYear();
+    let endMonth = end.getMonth();
+
+    let totalMonths = (endYear - startYear) * 12 + (endMonth - startMonth) + 1; // +1 to make it inclusive
+
+    const years = Math.floor(totalMonths / 12);
+    const months = totalMonths % 12;
+
+    let duration = '';
+    if (years > 0) {
+      duration += `${years} year${years > 1 ? 's' : ''}`;
+    }
+    if (months > 0) {
+      if (duration) duration += ', ';
+      duration += `${months} month${months > 1 ? 's' : ''}`;
+    }
+    return duration;
+  }
+
+
+  function updateDurations() {
+    const timelineItems = document.querySelectorAll(".timeline-item span[data-start-date]")
+    timelineItems.forEach((item) => {
+      const startDate = item.getAttribute('data-start-date')
+      const endDate = item.getAttribute('data-end-date')
+      const durationElement = item.querySelector(".duration")
+
+      if (durationElement) {
+        const duration = calculateDuration(startDate, endDate)
+        durationElement.textContent = duration
+      } else if (endDate === "present") {
+        const duration = calculateDuration(startDate, "present")
+        item.textContent = `${item.textContent.split("—")[0]} — Present • ${duration}`
+      }
+    })
+  }
+
+  // Initial update
+  updateDurations()
+
+  // Update durations every minute
+  setInterval(updateDurations, 60000)
+});
