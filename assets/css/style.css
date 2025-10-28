@@ -2,21 +2,15 @@
   #style.css
 \*___________________________________*/
 
-
 /*
-© COPYRIGHT 2024 @verebtamas
+© COPYRIGHT 2025 @verebtamas
 */
-
 
 /*___________________________________*\
   #CUSTOM PROPERTY
 \*___________________________________*/
 
 :root {
-
-
-
-
 
   /**
    * colors
@@ -25,57 +19,52 @@
   /* gradient */
 
   --bg-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(240, 1%, 25%) 3%, 
-    hsl(0, 0%, 19%) 97%
+    to bottom right,
+    hsl(235, 8%, 22%) 3%,
+    hsl(235, 6%, 18%) 97%
   );
-
   --bg-gradient-jet: linear-gradient(
-    to bottom right, 
-    hsla(240, 1%, 18%, 0.251) 0%, 
-    hsla(240, 2%, 11%, 0) 100%
-  ), hsl(240, 2%, 13%);
+    to bottom right,
+    hsla(235, 8%, 20%, 0.22) 0%,
+    hsla(235, 6%, 12%, 0) 100%
+  ), hsl(235, 6%, 14%);
   --bg-gradient-yellow-1: linear-gradient(
-    to bottom right, 
-    /*hsl(45, 100%, 71%) 0%, alap szín*/
-    hsl(212, 53%, 58%), 0%
-    hsla(36, 100%, 69%, 0) 50%
+    to bottom right,
+    /* korábbi yellow grad helyén TechGlow kék */
+    hsl(205, 95%, 64%), 0%,
+    hsla(205, 95%, 64%, 0) 50%
   );
   --bg-gradient-yellow-2: linear-gradient(
-
-    135deg, 
-    /*hsla(45, 100%, 71%, 0.251) 0%, alap szín*/
-    hsla(214, 100%, 71%, 0.251) 0%, 
-    hsla(0, 33%, 1%, 0) 59.86%
-  ), hsl(240, 2%, 13%);
-
+    135deg,
+    /* világító, áttetsző kék glow */
+    hsla(205, 95%, 64%, 0.25) 0%,
+    hsla(235, 20%, 6%, 0) 59.86%
+  ), hsl(235, 6%, 14%);
   --border-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(0, 0%, 25%) 0%, 
-    hsla(0, 0%, 25%, 0) 50%
+    to bottom right,
+    hsl(235, 6%, 22%) 0%,
+    hsla(235, 6%, 22%, 0) 50%
   );
   --text-gradient-yellow: linear-gradient(
-
-    to right, 
-    /*hsl(45, 100%, 72%),
-    hsl(35, 100%, 68%) alap színek*/
-    hsl(216, 100%, 72%),
-    hsl(229, 100%, 68%)
+    to right,
+    /* TechGlow text gradient: kék -> lila */
+    #58A6FF,
+    #8B5CF6
   );
 
   /* solid */
 
-  --jet: hsl(0, 0%, 22%);
-  --onyx: hsl(240, 1%, 17%);
-  --eerie-black-1: hsl(240, 2%, 13%);
-  --eerie-black-2: hsl(240, 2%, 12%);
-  --smoky-black: hsl(0, 0%, 7%);
+  --jet: hsl(235, 6%, 22%);
+  --onyx: hsl(235, 6%, 17%);
+  --eerie-black-1: hsl(235, 6%, 13%);
+  --eerie-black-2: hsl(235, 6%, 12%);
+  --smoky-black: hsl(235, 8%, 6%);
   --white-1: hsl(0, 0%, 100%);
   --white-2: hsl(0, 0%, 98%);
-  /*--orange-yellow-crayola: hsl(45, 100%, 72%); alap szín */
-  --orange-yellow-crayola: hsl(212, 53%, 58%);
-  /*--vegas-gold: hsl(45, 54%, 58%); alap szín*/
-  --vegas-gold: hsl(221, 54%, 58%);
+  /* --orange-yellow-crayola helyén TechGlow blue */
+  --orange-yellow-crayola: #58A6FF; /* primary accent (TechBlue) */
+  /* --vegas-gold helyén lila highlight */
+  --vegas-gold: #8B5CF6; /* purple accent */
   --light-gray: hsl(0, 0%, 84%);
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
   --bittersweet-shimmer: hsl(0, 43%, 51%);
@@ -106,12 +95,12 @@
   /**
    * shadow
    */
-  
-  --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
-  --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
-  --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
-  --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
-  --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
+
+  --shadow-1: -4px 8px 24px hsla(235, 6%, 6%, 0.35);
+  --shadow-2: 0 16px 30px hsla(235, 6%, 6%, 0.25);
+  --shadow-3: 0 16px 40px hsla(235, 6%, 6%, 0.25);
+  --shadow-4: 0 25px 50px hsla(235, 6%, 6%, 0.15);
+  --shadow-5: 0 24px 80px hsla(235, 6%, 6%, 0.25);
 
   /**
    * transition
@@ -121,10 +110,6 @@
   --transition-2: 0.5s ease-in-out;
 
 }
-
-
-
-
 
 /*-----------------------------------*\
   #RESET
@@ -167,11 +152,6 @@ input, textarea {
 html { font-family: var(--ff-poppins); }
 
 body { background: var(--smoky-black); }
-
-
-
-
-
 
 /*-----------------------------------*\
   #REUSED STYLE
@@ -228,8 +208,8 @@ article.active {
 }
 
 @keyframes fade {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 .h2,
@@ -304,10 +284,6 @@ article.active {
   z-index: -1;
 }
 
-
-
-
-
 /*-----------------------------------*\
   #MAIN
 \*-----------------------------------*/
@@ -317,10 +293,6 @@ main {
   margin-bottom: 75px;
   min-width: 259px;
 }
-
-
-
-
 
 /*-----------------------------------*\
   #SIDEBAR
@@ -455,12 +427,7 @@ main {
   font-size: 18px;
 }
 
-
 .social-item .social-link:hover { color: var(--light-gray); }
-
-
-
-
 
 /*-----------------------------------*\
   #NAVBAR
@@ -471,7 +438,7 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: hsla(240, 1%, 17%, 0.75);
+  background: hsla(235, 6%, 17%, 0.75);
   backdrop-filter: blur(10px);
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
@@ -499,10 +466,6 @@ main {
 
 .navbar-link.active { color: var(--orange-yellow-crayola); }
 
-
-
-
-
 /*-----------------------------------*\
   #ABOUT
 \*-----------------------------------*/
@@ -518,10 +481,8 @@ main {
 
 .about-text p { margin-bottom: 15px; }
 
-
-
 /**
- * #service 
+ * #service
  */
 
 .service { margin-bottom: 35px; }
@@ -563,13 +524,12 @@ main {
 .service-item-text {
   color: var(--light-gray);
   font-size: var(--fs-6);
-  font-weight: var(--fw-3);
+  font-weight: var(--fw-300);
   line-height: 1.6;
 }
 
-
 /**
- * #testimonials 
+ * #testimonials
  */
 
 .testimonials { margin-bottom: 30px; }
@@ -618,7 +578,6 @@ main {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
 
 /**
  * #testimonials-modal
@@ -733,9 +692,8 @@ main {
   line-height: 1.6;
 }
 
-
 /**
- * #clients 
+ * #clients
  */
 
 .clients { margin-bottom: 15px; }
@@ -768,19 +726,14 @@ main {
 
 .clients-item img:hover { filter: grayscale(0); }
 
-
-
-
-
 /*-----------------------------------*\
   #RESUME
 \*-----------------------------------*/
 
 .article-title { margin-bottom: 30px; }
 
-
 /**
- * education and experience 
+ * education and experience
  */
 
 .timeline { margin-bottom: 30px; }
@@ -841,15 +794,13 @@ main {
   line-height: 1.6;
 }
 
-
 /**
- * skills 
+ * skills
  */
 
 .skills-title { margin-bottom: 20px; }
 
 .skills-list { padding: 20px; }
-
 
 .skills-item:not(:last-child) { margin-bottom: 15px; }
 
@@ -878,10 +829,6 @@ main {
   height: 100%;
   border-radius: inherit;
 }
-
-
-
-
 
 /*-----------------------------------*\
   #PORTFOLIO
@@ -942,7 +889,7 @@ main {
   border-radius: 8px;
 }
 
-.select-item button:hover { --eerie-black-2: hsl(240, 2%, 20%); }
+.select-item button:hover { --eerie-black-2: hsl(235, 6%, 20%); }
 
 .project-list {
   display: grid;
@@ -1038,10 +985,6 @@ main {
   font-weight: var(--fw-300);
 }
 
-
-
-
-
 /*-----------------------------------*\
   #BLOG
 \*-----------------------------------*/
@@ -1125,10 +1068,6 @@ main {
   font-weight: var(--fw-300);
   line-height: 1.6;
 }
-
-
-
-
 
 /*-----------------------------------*\
   #CONTACT
@@ -1233,10 +1172,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 .form-btn:disabled:hover::before { background: var(--bg-gradient-jet); }
 
-
-
-
-
 /*-----------------------------------*\
   #RESPONSIVE
 \*-----------------------------------*/
@@ -1253,20 +1188,14 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .clients-item { min-width: calc(33.33% - 10px); }
 
-
-
   /**
-   * #PORTFOLIO, BLOG 
+   * #PORTFOLIO, BLOG
    */
 
   .project-img,
   .blog-banner-box { height: auto; }
 
 }
-
-
-
-
 
 /**
  * responsive larger than 580px screen
@@ -1293,8 +1222,6 @@ textarea.form-input::-webkit-resizer { display: none; }
     --fs-8: 12px;
 
   }
-
-
 
   /**
    * #REUSED STYLE
@@ -1323,8 +1250,6 @@ textarea.form-input::-webkit-resizer { display: none; }
     font-size: 18px;
   }
 
-
-
   /**
    * #MAIN
    */
@@ -1333,8 +1258,6 @@ textarea.form-input::-webkit-resizer { display: none; }
     margin-top: 60px;
     margin-bottom: 100px;
   }
-
-
 
   /**
    * #SIDEBAR
@@ -1379,8 +1302,6 @@ textarea.form-input::-webkit-resizer { display: none; }
     width: calc(100% - 64px);
   }
 
-
-
   /**
    * #NAVBAR
    */
@@ -1390,8 +1311,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   .navbar-list { gap: 20px; }
 
   .navbar-link { --fs-8: 14px; }
-
-
 
   /**
    * #ABOUT
@@ -1494,8 +1413,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .clients-item { min-width: calc(33.33% - 35px); }
 
-
-
   /**
    * #RESUME
    */
@@ -1512,8 +1429,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .skills-item:not(:last-child) { margin-bottom: 25px; }
 
-
-
   /**
    * #PORTFOLIO, BLOG
    */
@@ -1523,8 +1438,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   .blog-posts-list { gap: 30px; }
 
   .blog-content { padding: 25px; }
-
-
 
   /**
    * #CONTACT
@@ -1553,10 +1466,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 }
 
-
-
-
-
 /**
  * responsive larger than 768px screen
  */
@@ -1571,8 +1480,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .has-scrollbar::-webkit-scrollbar-button { width: 100px; }
 
-
-
   /**
    * SIDEBAR
    */
@@ -1582,15 +1489,11 @@ textarea.form-input::-webkit-resizer { display: none; }
     gap: 30px 15px;
   }
 
-
-
   /**
    * NAVBAR
    */
 
   .navbar-link { --fs-8: 15px; }
-
-
 
   /**
    * ABOUT
@@ -1604,8 +1507,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .modal-avatar-box img { width: 80px; }
-
-
 
   /**
    * PORTFOLIO
@@ -1638,8 +1539,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .project-list, .blog-posts-list { grid-template-columns: 1fr 1fr; }
 
-
-
   /**
    * CONTACT
    */
@@ -1650,12 +1549,8 @@ textarea.form-input::-webkit-resizer { display: none; }
     width: max-content;
     margin-left: auto;
   }
-  
+
 }
-
-
-
-
 
 /**
  * responsive larger than 1024px screen
@@ -1673,13 +1568,11 @@ textarea.form-input::-webkit-resizer { display: none; }
     * shadow
     */
 
-    --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.125);
-    --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.125);
-    --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.125);
+    --shadow-1: -4px 8px 24px hsla(235, 6%, 6%, 0.125);
+    --shadow-2: 0 16px 30px hsla(235, 6%, 6%, 0.125);
+    --shadow-3: 0 16px 40px hsla(235, 6%, 6%, 0.125);
 
   }
-
-
 
   /**
    * REUSED STYLE
@@ -1690,10 +1583,8 @@ textarea.form-input::-webkit-resizer { display: none; }
     box-shadow: var(--shadow-5);
   }
 
-
-
   /**
-   * MAIN 
+   * MAIN
    */
 
   main { margin-bottom: 60px; }
@@ -1703,8 +1594,6 @@ textarea.form-input::-webkit-resizer { display: none; }
     width: max-content;
     margin: auto;
   }
-
-
 
   /**
    * NAVBAR
@@ -1729,8 +1618,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .navbar-link { font-weight: var(--fw-500); }
 
-
-
   /**
    * ABOUT
    */
@@ -1750,15 +1637,11 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .clients-item { min-width: calc(25% - 38px); }
 
-
-
   /**
    * PORTFOLIO
    */
 
   .project-list { grid-template-columns: repeat(3, 1fr); }
-
-
 
   /**
    * BLOG
@@ -1767,10 +1650,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   .blog-banner-box { height: 230px; }
 
 }
-
-
-
-
 
 /**
  * responsive larger than 1250px screen
@@ -1788,17 +1667,15 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   body::-webkit-scrollbar-thumb {
     border: 5px solid var(--smoky-black);
-    background: hsla(0, 0%, 100%, 0.1);
+    background: hsla(0, 0%, 100%, 0.05);
     border-radius: 20px;
-    box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11),
-                inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
+    box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.05),
+                inset -1px -1px 0 hsla(0, 0%, 100%, 0.05);
   }
 
-  body::-webkit-scrollbar-thumb:hover { background: hsla(0, 0%, 100%, 0.15); }
+  body::-webkit-scrollbar-thumb:hover { background: hsla(0, 0%, 100%, 0.08); }
 
   body::-webkit-scrollbar-button { height: 60px; }
-
-
 
   /**
    * REUSED STYLE
@@ -1807,8 +1684,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   .sidebar, article { width: auto; }
 
   article { min-height: 100%; }
-
-
 
   /**
    * MAIN
@@ -1828,8 +1703,6 @@ textarea.form-input::-webkit-resizer { display: none; }
     width: 75%;
     margin: 0;
   }
-
-
 
   /**
    * SIDEBAR
@@ -1883,23 +1756,19 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .social-list { justify-content: center; }
 
-
-
   /**
-	 * RESUME
-	 */
+   * RESUME
+   */
 
   .timeline-text { max-width: 700px; }
 
 }
 
-
-
 /*test*/
 .language-selector {
   position: relative;
   display: inline-block;
-  background: hsla(240, 1%, 17%, 0.75);
+  background: hsla(235, 6%, 17%, 0.75);
   backdrop-filter: blur(10px);
   border: 1px solid var(--jet);
   border-radius: 12px;
@@ -1936,13 +1805,12 @@ textarea.form-input::-webkit-resizer { display: none; }
   display: block;
 }
 
-
 footer {
   /*position: fixed;*/
   bottom: 0;
   left: 0;
   width: 100%;
-  background: hsla(240, 1%, 17%, 0.75);
+  background: hsla(235, 6%, 17%, 0.75);
   backdrop-filter: blur(10px);
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
