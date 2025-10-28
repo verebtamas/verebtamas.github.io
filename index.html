@@ -10,7 +10,7 @@
   <meta name="description" content="Veréb Tamás portfóliója – IT technikus, rendszerüzemeltető és webfejlesztő.">
   <meta name="author" content="Veréb Tamás">
   <meta name="keywords" content="IT, rendszergazda, webfejlesztés, portfólió, automatizálás">
-  <title>Personal Portfolio - Veréb Tamás</title>
+  <title>Personal Portfolio</title>
 
 <!-- Weboldal Ikon megváltoztatása -->
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
@@ -44,11 +44,12 @@
           <img src="./assets/images/my-avatar.png" alt="Veréb Tamás" width="160">
           </a>
         </figure>
+        <span class="active-status" title="Available for work!"></span>
 
         <div class="info-content">
           <h1 class="name" title="Richard hanrick">Veréb Tamás</h1>
 
-          <p class="title">IT Technician</p>
+          <p class="title">IT System Administrator</p>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
@@ -79,19 +80,19 @@
 
           </li>
 
-          <li class="contact-item">
+          <!--<li class="contact-item">
 
             <div class="icon-box">
               <ion-icon name="phone-portrait-outline"></ion-icon>
             </div>
 
-            <!--<div class="contact-info">
+            <div class="contact-info">
               <p class="contact-title">Phone</p>
 
               <a href="tel::P" class="contact-link">google.com</a>
-            </div>-->
+            </div>
 
-          </li>
+          </li>-->
 
           <li class="contact-item">
 
@@ -100,9 +101,9 @@
             </div>
 
             <div class="contact-info">
-              <p class="contact-title">Birthday</p>
+              <p class="contact-title">Age</p>
 
-              <time datetime="1982-06-23">Nov 07, 2003</time>
+              <time datetime="2003-11-07">21 years old</time>
             </div>
 
           </li>
@@ -244,7 +245,7 @@
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web design</h4>
+                <h4 class="h4 service-item-title">UI/UX Design</h4>
 
                 <p class="service-item-text">
                   Modern and high-quality designes websites and create a great looking environment.
@@ -260,7 +261,7 @@
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Websites</h4>
+                <h4 class="h4 service-item-title">Web Development</h4>
 
                 <p class="service-item-text">
                   Which involves building and maintaining websites using various programming languages and technologies.
@@ -488,7 +489,7 @@
 
         <section class="clients">
 
-          <h3 class="h3 clients-title">Tools</h3>
+          <h3 class="h3 clients-title">Skills</h3>
 
           <ul class="clients-list has-scrollbar">
 
@@ -628,10 +629,28 @@
 
             <li class="timeline-item">
 
+              <h4 class="h4 timeline-item-title">Bekomold Kft.</h4>
+
+              <span>Budapest</span>
+              <span data-start-date="2025.09.01" data-end-date="present">2025. Sep — Present&nbsp; • &nbsp;<span class="duration"></span></span>
+
+              <p class="timeline-text">
+                Responsible for maintaining and optimizing the company’s IT infrastructure, 
+                including servers, networks, and workstations. Ensures system reliability, 
+                security, and performance through regular updates, backups, and monitoring. 
+                Provides technical support to users, manages access control, and implements 
+                IT policies to maintain data integrity and operational efficiency.
+                 Collaborates with vendors and internal teams to plan and execute infrastructure upgrades.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
               <h4 class="h4 timeline-item-title">Samsung SDIHU</h4>
 
               <span>Göd</span>
-              <span><ion-icon name="star"></ion-icon>2023. July — Present</span>
+              <span data-start-date="2023.07.01" data-end-date="2025.09.01">2023. July — 2025. Sep&nbsp; • &nbsp;<span class="duration"></span></span>
 
               <p class="timeline-text">
                 Responsible for maintaining, troubleshooting, and repairing automated production systems to ensure efficient operation. 
@@ -661,7 +680,7 @@ Az operátorok és más technikusok képzése az automatizált rendszerek haszn�
               <h4 class="h4 timeline-item-title">Professional IT</h4>
 
               <span>Budapest</span>
-              <span>2023. June — 2023. July</span>
+              <span data-start-date="2023.06.01" data-end-date="2023.07.01">2023. June — 2023. July&nbsp; • &nbsp;<span class="duration"></span></span>
 
               <p class="timeline-text">
                 Assembling and repairing computers, backing up old systems, installing new systems, installing specified basic programs, and creating ready-to-use systems.
@@ -674,7 +693,7 @@ Az operátorok és más technikusok képzése az automatizált rendszerek haszn�
               <h4 class="h4 timeline-item-title">Develop custom requested application (C#)</h4>
 
               <span>Budapest</span>
-              <span>2020 — 2020</span>
+              <span data-start-date="2020.06.01" data-end-date="2020.07.01">2020 — 2020&nbsp; • &nbsp;<span class="duration"></span></span>
 
               <p class="timeline-text">
                 Developing a custom-designed application using C#, tailored to meet specific user requirements and functionalities.
@@ -683,6 +702,11 @@ Az operátorok és más technikusok képzése az automatizált rendszerek haszn�
             </li>
 
           </ol>
+          &nbsp;
+          <button class="form-btn" type="button" data-form-btn="" onclick="window.open('./assets/cv/verebtamas.pdf')">
+          <ion-icon name="document-text-outline" role="img" class="md hydrated" aria-label="document text outline"></ion-icon>
+          <span>Open CV</span>
+          </button>
 
         </section>
 
@@ -810,7 +834,7 @@ Az operátorok és más technikusok képzése az automatizált rendszerek haszn�
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Web design</button>
+              <button data-filter-btn>Web Design</button>
             </li>
 
             <li class="filter-item">
@@ -818,7 +842,7 @@ Az operátorok és más technikusok képzése az automatizált rendszerek haszn�
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Web development</button>
+              <button data-filter-btn>Web Development</button>
             </li>
 
           </ul>
@@ -842,7 +866,7 @@ Az operátorok és más technikusok képzése az automatizált rendszerek haszn�
               </li>
 
               <li class="select-item">
-                <button data-select-item>Web design</button>
+                <button data-select-item>Web Design</button>
               </li>
 
               <li class="select-item">
@@ -850,7 +874,7 @@ Az operátorok és más technikusok képzése az automatizált rendszerek haszn�
               </li>
 
               <li class="select-item">
-                <button data-select-item>Web development</button>
+                <button data-select-item>Web Development</button>
               </li>
 
             </ul>
@@ -859,7 +883,34 @@ Az operátorok és más technikusok képzése az automatizált rendszerek haszn�
 
           <ul class="project-list">
 
-            <li class="project-item  active">
+            <li class="project-item  active" data-filter-item="" data-category="web development">
+              <a href="https://verebtamas.github.io/" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline" role="img" class="md hydrated" aria-label="eye outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/projects/portfolio.png" alt="Vereb Tamas Portfolio" loading="lazy">
+                </figure>
+                <h3 class="project-title">Portfolio Website</h3>
+                <p class="project-category">Web Development</p>
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item="" data-category="web development">
+              <a href="https://verebtamas.github.io/munkaido" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline" role="img" class="md hydrated" aria-label="eye outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/projects/munkaido.png" alt="Munkaidő Kalkulátor" loading="lazy">
+                </figure>
+                <h3 class="project-title">Munkaidő Kalkulátor Website</h3>
+                <p class="project-category">Web Development</p>
+              </a>
+            </li>
+
+            <!--SAJÁTOM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+            <!--<li class="project-item  active">
               <a href="#">
 
                 <figure class="project-img">
@@ -875,7 +926,7 @@ Az operátorok és más technikusok képzése az automatizált rendszerek haszn�
                 <p class="project-category">Website</p>
 
               </a>
-            </li>
+            </li>-->
 
             <!--<li class="project-item  active" data-filter-item data-category="web development">
               <a href="#">
@@ -1062,10 +1113,10 @@ Az operátorok és más technikusok képzése az automatizált rendszerek haszn�
           <ul class="blog-posts-list">
 
             <li class="blog-post-item">
-              <a href="#">
+              <a href="https://verebtamas.hashnode.dev/">
 
                 <figure class="blog-banner-box">
-                  <img src="./assets/images/icon-info.svg" alt="Coming Soon" loading="lazy">
+                  <img src="./assets/images/blogs/blog.png" alt="Coming Soon" loading="lazy">
                 </figure>
 
                 <div class="blog-content">
@@ -1075,7 +1126,7 @@ Az operátorok és más technikusok képzése az automatizált rendszerek haszn�
 
                     <span class="dot"></span>
 
-                    <time datetime="2024-12-03">Dec 03, 2024</time>
+                    <time datetime="2024-12-03">Oct 28, 2025</time>
                   </div>
 
                   <h3 class="h3 blog-item-title">Coming soon</h3>
@@ -1294,7 +1345,7 @@ Az operátorok és más technikusok képzése az automatizált rendszerek haszn�
 
               <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
             </div>
-
+            <input type="text" name="subject" class="form-input" placeholder="Subject" required="" data-form-input="">
             <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
 
             <button class="form-btn" type="submit" disabled data-form-btn>
